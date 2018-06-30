@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MusicWeb.Models.Album>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    th{
+            color:#ffffff;
+    }
+
+</style>
+<h3 class="breadcrumb" style="background-color:#5cb85c; color:rgba(0, 0, 0, 0.66);">Albuns</h3>
+
+<div style="margin-bottom:20px; border-radius:100px;">
+
+    <a href='@Url.Action("Index", "Albums/Create")' class="btn"
+       style=" font-size:16px; border-radius:100px; background-color:rgba(0, 0, 0, 0.70); color:#5cb85c;">+</a>
+
+
+</div>
+<table class="table" style="color:#14D74E;">
+    <tr style=" color: #ffffff;">
+        <th>
+            @Html.DisplayNameFor(model => model.Artista.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genero.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlbumArtUrl)    
+        </th>
+       <th></th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artista.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genero.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor)
+        </td>
+        <td>
+           @Html.DisplayNameFor(model => model.AlbumArtUrl)"
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AlbumId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AlbumId })
+        </td>
+    </tr>
+}
+
+</table>

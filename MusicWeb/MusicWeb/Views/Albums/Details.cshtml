@@ -1,0 +1,58 @@
+﻿@model MusicWeb.Models.Album
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Album</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Artista.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Artista.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genero.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genero.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbumArtUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlbumArtUrl)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
