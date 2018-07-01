@@ -23,8 +23,10 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Album", "Index", "Albums")</li>
-                    <li>@Html.ActionLink("Artista", "Index", "Artistas")</li>
-                    <li>@Html.ActionLink("Gênero", "Index", "Generos")</li>
+                    <!-- <li>@Html.ActionLink("Artista", "Index", "Artistas")</li>-->
+                    <li>@Html.ActionLink("Generos", "Index", "Generos")</li>
+                    <li>@Html.ActionLink("Loja", "Index", "Loja")</li>
+
 
 
 
@@ -33,20 +35,22 @@
         </div>
     </div>
 
-    <div class="container body-content" style="background-color:rgba(61, 61, 61, 0.88);">
+    <div class="container body-content" style="background-color:rgba(61, 61, 61, .90); text-align:left;">
         @RenderBody()
         <hr />
 
-        
+      
 
-        <footer>
-            <p style="color:#fff; text-align:center;">&oplus;   Melhor da música você só encontra aqui!!  -   @DateTime.Now</p>
-        </footer>
+        
 
 
 
     </div>
-    
+
+    <footer>
+        <p style="color:#fff; text-align:center;">&oplus;   Melhor da música você só encontra aqui!!  -   @DateTime.Now</p>
+    </footer>
+
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>

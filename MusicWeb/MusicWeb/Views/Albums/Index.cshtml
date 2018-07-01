@@ -3,23 +3,14 @@
 @{
     ViewBag.Title = "Index";
 }
-<style>
-    th{
-            color:#ffffff;
-    }
 
-</style>
-<h3 class="breadcrumb" style="background-color:#5cb85c; color:rgba(0, 0, 0, 0.66);">Albuns</h3>
+<h2>Index</h2>
 
-<div style="margin-bottom:20px; border-radius:100px;">
-
-    <a href='@Url.Action("Index", "Albums/Create")' class="btn"
-       style=" font-size:16px; border-radius:100px; background-color:rgba(0, 0, 0, 0.70); color:#5cb85c;">+</a>
-
-
-</div>
-<table class="table" style="color:#14D74E;">
-    <tr style=" color: #ffffff;">
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
         <th>
             @Html.DisplayNameFor(model => model.Artista.Nome)
         </th>
@@ -33,10 +24,9 @@
             @Html.DisplayNameFor(model => model.Valor)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AlbumArtUrl)    
+            @Html.DisplayNameFor(model => model.AlbumArtUrl)
         </th>
-       <th></th>
-       
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -54,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.Valor)
         </td>
         <td>
-           @Html.DisplayNameFor(model => model.AlbumArtUrl)"
+            @Html.DisplayFor(modelItem => item.AlbumArtUrl)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) |

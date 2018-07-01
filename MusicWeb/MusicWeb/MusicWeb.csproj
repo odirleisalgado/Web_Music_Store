@@ -100,11 +100,18 @@
     <Content Include="Content\img\generos.JPG" />
     <Content Include="Content\img\musicbk.jpg" />
     <Content Include="Content\img\musicbk2.jpg" />
+    <Content Include="Content\img\reggae.jpg" />
+    <Content Include="Content\img\rock.JPG" />
+    <Content Include="Content\img\rock1.JPG" />
+    <Content Include="Content\img\samba.jpg" />
+    <Content Include="Content\img\sertanejo.JPG" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\horse.ogg" />
+    <Content Include="Content\music\horse.ogg" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -133,6 +140,7 @@
     <Compile Include="Controllers\ArtistasController.cs" />
     <Compile Include="Controllers\GenerosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LojaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -151,6 +159,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Loja\Index.cshtml" />
+    <Content Include="Views\Loja\Details.cshtml" />
+    <Content Include="Views\Loja\Browse.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

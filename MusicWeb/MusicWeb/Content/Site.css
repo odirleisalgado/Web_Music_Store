@@ -7,14 +7,13 @@
 .principal {
     background-image: url(img/musicbk.jpg);
     background-repeat: no-repeat;
-    opacity: .85;
     background-size: cover;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
   
 }
 
