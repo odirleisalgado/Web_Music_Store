@@ -27,9 +27,11 @@ namespace MusicWeb.Controllers
         }
         //
         // GET: /Store/Details
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
-            return View();
+            var album = db.Albums.Find(id);
+
+            return View(album);
         }
     }
 }

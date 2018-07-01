@@ -9,9 +9,9 @@
 <ul>
     @foreach (var album in Model.Albums)
     {
-        <li>
-            @album.Titulo
-        </li>
+    <li>
+        @Html.ActionLink(album.Titulo, "Details", new { id = album.AlbumId })
+    </li>
     }
 </ul>
 
