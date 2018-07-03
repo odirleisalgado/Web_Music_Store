@@ -11,120 +11,110 @@ using MusicWeb.Models;
 
 namespace MusicWeb.Controllers
 {
-    public class AlbumsController : Controller
+    public class UsuariosController : Controller
     {
         private Contexto db = new Contexto();
 
-        // GET: Albums
+        // GET: Usuarios
         public ActionResult Index()
         {
-            var albums = db.Albums.Include(a => a.Artista).Include(a => a.Genero);
-            return View(albums.ToList());
+            return View(db.Usuarios.ToList());
         }
 
-        // GET: Albums/Details/5
+        // GET: Usuarios/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Album album = db.Albums.Find(id);
-            if (album == null)
+            Usuario usuario = db.Usuarios.Find(id);
+            if (usuario == null)
             {
                 return HttpNotFound();
             }
-            return View(album);
+            return View(usuario);
         }
 
-        // GET: Albums/Create
+        // GET: Usuarios/Create
         public ActionResult Create()
         {
-            ViewBag.ArtistaId = new SelectList(db.Artistas, "ArtistaId", "Nome");
-            ViewBag.GeneroId = new SelectList(db.Generos, "GeneroId", "Nome");
             return View();
         }
 
-        // POST: Albums/Create
+        // POST: Usuarios/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AlbumId,GeneroId,ArtistaId,Titulo,Valor,AlbumArtUrl")] Album album)
+        public ActionResult Create([Bind(Include = "UsuarioId,Nome,Email,Senha,Endereco,Bairo,Numero")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                db.Albums.Add(album);
+                db.Usuarios.Add(usuario);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ArtistaId = new SelectList(db.Artistas, "ArtistaId", "Nome", album.ArtistaId);
-            ViewBag.GeneroId = new SelectList(db.Generos, "GeneroId", "Nome", album.GeneroId);
-            return View(album);
+            return View(usuario);
         }
 
-        // GET: Albums/Edit/5
+        // GET: Usuarios/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Album album = db.Albums.Find(id);
-            if (album == null)
+            Usuario usuario = db.Usuarios.Find(id);
+            if (usuario == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ArtistaId = new SelectList(db.Artistas, "ArtistaId", "Nome", album.ArtistaId);
-            ViewBag.GeneroId = new SelectList(db.Generos, "GeneroId", "Nome", album.GeneroId);
-            return View(album);
+            return View(usuario);
         }
 
-        // POST: Albums/Edit/5
+        // POST: Usuarios/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AlbumId,GeneroId,ArtistaId,Titulo,Valor,AlbumArtUrl")] Album album)
+        public ActionResult Edit([Bind(Include = "UsuarioId,Nome,Email,Senha,Endereco,Bairo,Numero")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(album).State = EntityState.Modified;
+                db.Entry(usuario).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ArtistaId = new SelectList(db.Artistas, "ArtistaId", "Nome", album.ArtistaId);
-            ViewBag.GeneroId = new SelectList(db.Generos, "GeneroId", "Nome", album.GeneroId);
-            return View(album);
+            return View(usuario);
         }
 
-        // GET: Albums/Delete/5
+        // GET: Usuarios/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Album album = db.Albums.Find(id);
-            if (album == null)
+            Usuario usuario = db.Usuarios.Find(id);
+            if (usuario == null)
             {
                 return HttpNotFound();
             }
-            return View(album);
+            return View(usuario);
         }
 
-        // POST: Albums/Delete/5
+        // POST: Usuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Album album = db.Albums.Find(id);
-            db.Albums.Remove(album);
+            Usuario usuario = db.Usuarios.Find(id);
+            db.Usuarios.Remove(usuario);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
 
 
         protected override void Dispose(bool disposing)

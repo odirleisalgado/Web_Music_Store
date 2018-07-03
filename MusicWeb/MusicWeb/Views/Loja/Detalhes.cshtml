@@ -1,0 +1,82 @@
+﻿@model MusicWeb.Models.Album
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Detalhes de : @Model.Titulo</h4>
+    <hr />
+
+
+    <img src="@Model.AlbumArtUrl" />
+
+
+    @using (Html.BeginForm("Adicionar", "Loja", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken();
+
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Artista.Nome)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Artista.Nome)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Genero.Nome)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Genero.Nome)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Titulo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Valor)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Valor)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AlbumArtUrl)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AlbumArtUrl)
+            </dd>
+
+
+        </dl>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+
+
+ }
+
+
+
+
+<p>
+  
+    @Html.ActionLink("Voltar", "Browse")
+</p>

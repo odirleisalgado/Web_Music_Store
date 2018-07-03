@@ -1,0 +1,77 @@
+﻿@model MusicWeb.Models.Usuario
+
+@{
+    ViewBag.Title = "Login";
+}
+<link href="~/Content/Estilo/forms.css" rel="stylesheet" />
+<h2>Login</h2>
+
+<div class="container" style="width:100%; align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;">
+
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+
+        <fieldset>
+            <legend>Insira seus dados</legend>
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            @if (@ViewBag.Message != null)
+            {
+                <div style="border: 1px solid red">
+                    @ViewBag.Message
+                </div>
+            }
+
+
+            <div>
+                <fieldset>
+
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Email)
+                    </div>
+
+                    <div style="margin-bottom:10px;">
+                        @Html.TextBoxFor(m => m.Email)
+                        @Html.ValidationMessageFor(m => m.Email)
+                    </div>
+
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Senha)
+                    </div>
+                    <div class="editor-field">
+                        @Html.PasswordFor(m => m.Senha)
+                        @Html.ValidationMessageFor(m => m.Senha)
+                    </div>
+
+                    <br />
+
+                    <p>
+                        <input type="submit" value="Logar" />
+                    </p>
+                </fieldset>
+            </div>
+
+
+        </fieldset>
+
+
+
+        <div>
+            @Html.ActionLink("Registrar-se", "Create", "Usuarios")
+        </div>
+
+    }
+
+
+
+</div>
+
+

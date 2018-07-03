@@ -1,0 +1,16 @@
+﻿@model MusicWeb.Models.Usuario
+
+@{
+    ViewBag.Title = "UserDashBoard";
+}
+<link href="~/Content/Estilo/forms.css" rel="stylesheet" />
+
+<h2 >UserDashBoard</h2>
+
+@if (Session["Email"] != null)
+{
+    <h3>
+        Welcome @Session["IdUsuario"].ToString()
+    </h3>
+
+}

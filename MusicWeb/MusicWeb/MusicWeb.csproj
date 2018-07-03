@@ -97,7 +97,13 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Estilo\forms.css" />
+    <Content Include="Content\Estilo\SiteEx.css" />
+    <Content Include="Content\img\eletronic.JPG" />
+    <Content Include="Content\img\funk.jpg" />
     <Content Include="Content\img\generos.JPG" />
+    <Content Include="Content\img\gospel.png" />
+    <Content Include="Content\img\jazz2.jpg" />
     <Content Include="Content\img\musicbk.jpg" />
     <Content Include="Content\img\musicbk2.jpg" />
     <Content Include="Content\img\reggae.jpg" />
@@ -122,11 +128,6 @@
     <Content Include="Views\Generos\Details.cshtml" />
     <Content Include="Views\Generos\Edit.cshtml" />
     <Content Include="Views\Generos\Index.cshtml" />
-    <Content Include="Views\Artistas\Create.cshtml" />
-    <Content Include="Views\Artistas\Delete.cshtml" />
-    <Content Include="Views\Artistas\Details.cshtml" />
-    <Content Include="Views\Artistas\Edit.cshtml" />
-    <Content Include="Views\Artistas\Index.cshtml" />
     <Content Include="Views\Albums\Create.cshtml" />
     <Content Include="Views\Albums\Delete.cshtml" />
     <Content Include="Views\Albums\Details.cshtml" />
@@ -141,12 +142,15 @@
     <Compile Include="Controllers\GenerosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LojaController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Artista.cs" />
     <Compile Include="Models\Genero.cs" />
+    <Compile Include="Models\Pedido.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +166,20 @@
     <Content Include="Views\Loja\Index.cshtml" />
     <Content Include="Views\Loja\Details.cshtml" />
     <Content Include="Views\Loja\Browse.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\UserDashBoard.cshtml" />
+    <Content Include="Views\Artistas\Create.cshtml" />
+    <Content Include="Views\Artistas\Delete.cshtml" />
+    <Content Include="Views\Artistas\Details.cshtml" />
+    <Content Include="Views\Artistas\Edit.cshtml" />
+    <Content Include="Views\Artistas\Index.cshtml" />
+    <Content Include="Views\Loja\Detalhes.cshtml" />
+    <Content Include="Views\Loja\CarrinhoDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

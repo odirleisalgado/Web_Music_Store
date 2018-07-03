@@ -9,7 +9,7 @@ namespace MusicWeb.Banco
 {
     public class Contexto : DbContext
     {
-        public Contexto() : base("stringConn")
+        public Contexto() : base("stringDeConeccao")
         {
             Database.SetInitializer<Contexto>(new DropCreateDatabaseIfModelChanges<Contexto>());
         }
@@ -17,10 +17,8 @@ namespace MusicWeb.Banco
         public DbSet<Album> Albums { get; set; }
         public DbSet<Genero> Generos { get; set; }
         public DbSet<Artista> Artistas { get; set; }
-
-
-
-
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
     }
 
 }

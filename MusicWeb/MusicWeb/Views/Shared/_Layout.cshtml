@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -21,15 +22,36 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Album", "Index", "Albums")</li>
-                    <!-- <li>@Html.ActionLink("Artista", "Index", "Artistas")</li>-->
-                    <li>@Html.ActionLink("Generos", "Index", "Generos")</li>
-                    <li>@Html.ActionLink("Loja", "Index", "Loja")</li>
+
+                    @if (Session["Email"] != null)
+                    {
+                        if (Session["Email"].Equals("odirlei@gmail.com"))
+                        {
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Album", "Index", "Albums")</li>
+                            <li>@Html.ActionLink("Artista", "Index", "Artistas")</li>
+                            <li>@Html.ActionLink("Generos", "Index", "Generos")</li>
+                            <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
+
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Loja", "Index", "Loja")</li>
+                            <li>@Html.ActionLink("Artistas", "Index", "Artistas")</li>
+                            <li>@Html.ActionLink("Carrinho", "CarrinhoDetails", "Loja")</li>
 
 
+                        }
+                    }
+                </ul>
+                <ul class="nav navbar-nav" style=" color:rgba(0, 255, 144, 0.64); float:right; color:rgba(0, 255, 144, 0.80);">
+                    @if (Session["Email"] != null)
+                    {
+                        <li style="float:left; margin-right:10px; margin-top:15px;"> Usuário : @Session["Email"].ToString()</li>
 
-
+                        <li>@Html.ActionLink("Sair", "Login", "Home")</li>
+                    }
                 </ul>
             </div>
         </div>
@@ -39,9 +61,9 @@
         @RenderBody()
         <hr />
 
-      
 
-        
+
+
 
 
 

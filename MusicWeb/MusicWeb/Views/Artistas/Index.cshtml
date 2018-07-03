@@ -3,31 +3,39 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+<link href="~/Content/Estilo/forms.css" rel="stylesheet" />
+<h2 class="breadcrumb" style="text-align:center; color:#000000; background-color:#00ff90;">Artistas</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ArtistaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ArtistaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ArtistaId })
-        </td>
-    </tr>
-}
+<div class="container col-lg-12" style="width:100%; align-items:center; align-content:center;">
 
-</table>
+    <table class="table table-condensed" style="margin-left:16%;">
+        <tr style=" color:rgba(0, 0, 0, 0.78);font-size:16px;">
+            <th style="background-color:#fff; color:rgba(0, 0, 0, 0.78);font-size:16px;">
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th class="col-md-4" style="display:block; float:left; background-color:#fff; color:rgba(0, 0, 0, 0.78);font-size:16px; text-align:center;">
+                Opção
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td class="col-lg-4" style="display:block; float:left; text-align:center;">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ArtistaId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ArtistaId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ArtistaId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

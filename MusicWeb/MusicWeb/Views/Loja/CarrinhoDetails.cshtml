@@ -1,0 +1,68 @@
+﻿@model  IEnumerable<MusicWeb.Models.Album>
+
+@{
+    ViewBag.Title = "CarrinhoDetails";
+}
+
+<h2>Detalhes do Carrinho</h2>
+
+
+    
+   
+
+        <table class="table table-bordered" style="color:#ffffff;">
+            <tr style=" color:rgba(0, 0, 0, 0.78);font-size:16px;">
+                <th>
+                    @Html.DisplayNameFor(model => model.AlbumArtUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Titulo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Artista)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Genero)
+                </th>
+                <th>
+                    Valor
+                </th>
+                <th>
+                    Opções
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img width="100" src=" @Html.DisplayFor(modelItem => item.AlbumArtUrl)" />
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Artista.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genero.Nome)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+
+
+
+
+                <td style=" text-align:center;">
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AlbumId })
+                </td>
+            </tr>
+    }
+
+        </table>
+    
+

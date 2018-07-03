@@ -7,15 +7,24 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace MusicWeb.Controllers
+
 {
     public class LojaController : Controller
     {
 
         private Contexto db = new Contexto();
+        static public List<Album> albuns = new List<Album>();
+       
+
         // GET: /Loja/
         public ActionResult Index()
         {
             return View(db.Generos.ToList());
+        }
+
+        public ActionResult CarrinhoDetails()
+        {
+            return View(albuns.ToList());
         }
         //
         // GET: /Loja/Browse
@@ -33,5 +42,22 @@ namespace MusicWeb.Controllers
 
             return View(album);
         }
+
+       
+        public ActionResult AdicionarAlbum(int id)
+        {
+            var album = db.Albums.Find(id);
+            if (album != null)
+            {
+                albuns.Add(album);
+            }
+
+
+            return RedirectToAction("index");
+           
+        }
+
+
+       
     }
 }

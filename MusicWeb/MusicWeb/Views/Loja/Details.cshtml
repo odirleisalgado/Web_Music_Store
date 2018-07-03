@@ -1,16 +1,44 @@
 ﻿@model MusicWeb.Models.Album
-    @{
-        ViewBag.Title = "Details";
-    }
+@{
+    ViewBag.Title = "Details";
+}
 
-    <h2>Details</h2>
+<h3 class="breadcrumb" style="background-color:#5cb85c; color:rgba(0, 0, 0, 0.80);">Detalhes</h3>
 
-    
-    
-   
-        
- 
-   
-   
-    
+<img src="@Model.AlbumArtUrl" width="160" />
+
+
+<ul style="list-style:none; color:#fff;">
+    <li>@Html.DisplayFor(model => model.Artista.Nome)</li>
+    <li>@Model.Titulo</li>
+    <li>@Model.Valor</li>
+    <li>@Model.Genero.Nome</li>
+    <li>
+       @Html.ActionLink("Adicionar", "AdicionarAlbum", new { id = Model.AlbumId})
+    </li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
