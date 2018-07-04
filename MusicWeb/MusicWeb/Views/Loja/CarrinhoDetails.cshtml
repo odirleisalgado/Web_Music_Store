@@ -1,68 +1,105 @@
 ﻿@model  IEnumerable<MusicWeb.Models.Album>
 
 @{
+
+
     ViewBag.Title = "CarrinhoDetails";
-}
+    decimal total = 0;
 
-<h2>Detalhes do Carrinho</h2>
-
-
-    
-   
-
-        <table class="table table-bordered" style="color:#ffffff;">
-            <tr style=" color:rgba(0, 0, 0, 0.78);font-size:16px;">
-                <th>
-                    @Html.DisplayNameFor(model => model.AlbumArtUrl)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Titulo)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Artista)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Genero)
-                </th>
-                <th>
-                    Valor
-                </th>
-                <th>
-                    Opções
-                </th>
-            </tr>
-
-            @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    <img width="100" src=" @Html.DisplayFor(modelItem => item.AlbumArtUrl)" />
-
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Titulo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Artista.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genero.Nome)
-                </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.Valor)
-                </td>
-
-
-
-
-                <td style=" text-align:center;">
-
-                    @Html.ActionLink("Delete", "Delete", new { id = item.AlbumId })
-                </td>
-            </tr>
+    foreach (var item in Model)
+    {
+        total += decimal.Parse( item.Valor.ToString());
     }
 
-        </table>
+    ViewBag.Total = total;
+}
+
+<style>
+
+    th, td, tr {
+        text-align: center;
+    }
+
+    td {
+        font-size: 16px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: #fff;
+    }
+
+    #td {
+        padding-top: 30px;
+    }
+</style>
+
+<h3 class="breadcrumb" style="background-color:#428bca; margin-top:80px; color:rgb(255, 255, 255);">Meu Carrinho</h3>
+
+
+
+
+
+<table class="table" style="color:rgba(0, 0, 0, 0.62); background-color:rgba(0, 45, 170, 0.50); text-align:center;">
+    <tr style=" color:#fff;font-size:16px;">
+        <th>
+            Capa
+        </th>
+        <th>
+            Album
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Artista)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genero)
+        </th>
+        <th>
+            Valor
+        </th>
+        <th>
+            Opções
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+       
+        <tr>
+            <td>
+                <img class="img-thumbnail" width="80" src=" @Html.DisplayFor(modelItem => item.AlbumArtUrl)" />
+
+            </td>
+            <td id="td">
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td id="td">
+                @Html.DisplayFor(modelItem => item.Artista.Nome)
+            </td>
+            <td id="td">
+                @Html.DisplayFor(modelItem => item.Genero.Nome)
+            </td>
+
+            <td id="td">
+                R$ @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+
+            <td id="td">
+
+                @Html.ActionLink("Excluir", "delete", new { id = item.AlbumId })
+
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+
+<button class="btn btn-success" style="color:#2ed116; 
+background-color:rgba(255, 255, 255, 0.00); border-radius:30px; font-weight:bold;" 
+type="button" onclick="location.href='@Url.Action("Index", "Loja")'">Continuar Comprando</button>
+
+ <span style=" font-size:16px; font-weight:bold; float:right; margin-right:10px;">Total R$ @total</span>
+
     
+
+
 

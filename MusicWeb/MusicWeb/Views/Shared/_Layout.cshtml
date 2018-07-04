@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Music Web</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
@@ -38,14 +37,13 @@
                         {
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("Loja", "Index", "Loja")</li>
-                            <li>@Html.ActionLink("Artistas", "Index", "Artistas")</li>
                             <li>@Html.ActionLink("Carrinho", "CarrinhoDetails", "Loja")</li>
 
 
                         }
                     }
                 </ul>
-                <ul class="nav navbar-nav" style=" color:rgba(0, 255, 144, 0.64); float:right; color:rgba(0, 255, 144, 0.80);">
+                <ul class="nav navbar-nav" style=" color:rgba(0, 255, 144, 0.30); float:right; color:rgba(0, 255, 144, 0.80);">
                     @if (Session["Email"] != null)
                     {
                         <li style="float:left; margin-right:10px; margin-top:15px;"> Usuário : @Session["Email"].ToString()</li>
@@ -57,20 +55,16 @@
         </div>
     </div>
 
-    <div class="container body-content" style="background-color:rgba(61, 61, 61, .90); text-align:left;">
+    <div class="container body-content" style="background-color:rgba(216, 216, 216, 0.40); text-align:left;">
         @RenderBody()
         <hr />
 
-
-
-
-
-
-
     </div>
 
-    <footer>
-        <p style="color:#fff; text-align:center;">&oplus;   Melhor da música você só encontra aqui!!  -   @DateTime.Now</p>
+
+
+    <footer style="margin-top:50px;font-size:16px;" class="well">
+        <p style="color:#000; text-align:center;">&oplus;   Melhor da música você só encontra aqui!!  -   @DateTime.Now</p>
     </footer>
 
 

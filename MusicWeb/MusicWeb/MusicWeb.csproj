@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -24,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -95,33 +97,50 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CapasAlbuns\18Months.JPG" />
+    <Content Include="Content\CapasAlbuns\bang.jpg" />
+    <Content Include="Content\CapasAlbuns\danada_ludmila.JPG" />
+    <Content Include="Content\CapasAlbuns\david_guetta1.JPG" />
+    <Content Include="Content\CapasAlbuns\david_guetta2.JPG" />
+    <Content Include="Content\CapasAlbuns\hoje.JPG" />
+    <Content Include="Content\CapasAlbuns\matrizes.jpg" />
+    <Content Include="Content\CapasAlbuns\motion.JPG" />
+    <Content Include="Content\CapasAlbuns\ritmo_perfeito.jpg" />
+    <Content Include="Content\CapasAlbuns\vidas_pra_contar.png" />
     <Content Include="Content\Estilo\forms.css" />
     <Content Include="Content\Estilo\SiteEx.css" />
+    <Content Include="Content\img\anitta_album.jpg" />
+    <Content Include="Content\img\background2.jpg" />
     <Content Include="Content\img\eletronic.JPG" />
     <Content Include="Content\img\funk.jpg" />
     <Content Include="Content\img\generos.JPG" />
     <Content Include="Content\img\gospel.png" />
+    <Content Include="Content\CapasAlbuns\hibrid_theory.jpg" />
     <Content Include="Content\img\jazz2.jpg" />
-    <Content Include="Content\img\musicbk.jpg" />
-    <Content Include="Content\img\musicbk2.jpg" />
+    <Content Include="Content\img\jorge_matheus.jpg" />
+    <Content Include="Content\CapasAlbuns\meteora1.jpg" />
+    <Content Include="Content\CapasAlbuns\Minutes_to_Midnight.jpg" />
+    <Content Include="Content\img\mpb.jpg" />
     <Content Include="Content\img\reggae.jpg" />
     <Content Include="Content\img\rock.JPG" />
     <Content Include="Content\img\rock1.JPG" />
     <Content Include="Content\img\samba.jpg" />
     <Content Include="Content\img\sertanejo.JPG" />
+    <Content Include="Content\img\vinilbk.png" />
+    <Content Include="Content\music\Dont_Stay.mp3" />
+    <Content Include="Content\music\Faint Official Video - Linkin Park.mp4" />
+    <Content Include="Content\music\Faint.mp3" />
+    <Content Include="Content\music\Somewere_i_Belong.mp3" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Content\horse.ogg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Content\horse.ogg" />
-    <Content Include="Content\music\horse.ogg" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Generos\Create.cshtml" />
     <Content Include="Views\Generos\Delete.cshtml" />
@@ -155,14 +174,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Loja\Index.cshtml" />
     <Content Include="Views\Loja\Details.cshtml" />
     <Content Include="Views\Loja\Browse.cshtml" />
@@ -190,11 +213,15 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

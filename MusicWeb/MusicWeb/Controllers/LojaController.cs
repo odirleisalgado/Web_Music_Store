@@ -14,7 +14,7 @@ namespace MusicWeb.Controllers
 
         private Contexto db = new Contexto();
         static public List<Album> albuns = new List<Album>();
-       
+        public Decimal total = 0;
 
         // GET: /Loja/
         public ActionResult Index()
@@ -46,18 +46,39 @@ namespace MusicWeb.Controllers
        
         public ActionResult AdicionarAlbum(int id)
         {
+           
             var album = db.Albums.Find(id);
             if (album != null)
             {
                 albuns.Add(album);
+                total += decimal.Parse(album.Valor.ToString());
+            }
+
+            ViewBag.Total = total;
+            ViewBag.Message = "adicionado com susscesso!";
+            return RedirectToAction("CarrinhoDetails");
+          
+
+        }
+
+        public ActionResult delete(int id)
+        {
+            foreach (var item in new List<Album> (albuns))
+            {
+                if (item.AlbumId==id)
+                {
+                    albuns.Remove(item);
+                    break;
+                }
+               
             }
 
 
-            return RedirectToAction("index");
-           
+            return RedirectToAction("CarrinhoDetails");
+
         }
 
 
-       
+
     }
 }

@@ -3,27 +3,68 @@
     ViewBag.Title = "Details";
 }
 
-<h3 class="breadcrumb" style="background-color:#5cb85c; color:rgba(0, 0, 0, 0.80);">Detalhes</h3>
-
-<img src="@Model.AlbumArtUrl" width="160" />
-
-
-<ul style="list-style:none; color:#fff;">
-    <li>@Html.DisplayFor(model => model.Artista.Nome)</li>
-    <li>@Model.Titulo</li>
-    <li>@Model.Valor</li>
-    <li>@Model.Genero.Nome</li>
-    <li>
-       @Html.ActionLink("Adicionar", "AdicionarAlbum", new { id = Model.AlbumId})
-    </li>
-
-</ul>
+<h3 class="breadcrumb" style="background-color:#428bca; margin-top:80px; color:rgb(255, 255, 255);">Detalhes</h3>
 
 
 
+<div class="container-fluid" style="display:flex;  flex-flow:wrap; justify-content:flex-start;">
+
+
+    <div class="container" style="width:auto; margin:10px; height:auto; padding:10px;">
+        <img src="@Model.AlbumArtUrl" class="align-self-center mr-3 img-thumbnail" style="width:280px; height:280px;">
+    </div>
+
+    <div class="container" style="width:auto; margin:5px; height:auto; padding:10px;">
+
+        <h1 style="text-align:left; color:#000;">@Model.Titulo</h1>
+        <h4 style="text-align:left; color:#000;">@Model.Genero.Nome</h4>
+        <h4 style="text-align:left; color:#000;">@Model.Artista.Nome</h4>
+        <h4 style="text-align:left; color:#000;">R$ @Model.Valor</h4>
+
+        <button class="btn" style="color:white; background-color:#2ed116;
+border-radius:100px; width:auto;" type="button" onclick="location.href='@Url.Action("AdicionarAlbum", "Loja", new {id = Model.AlbumId })'">
+            Adicionar <span class="glyphicon glyphicon-shopping-cart" style="color:white;"></span>
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="container-fluid">
+
+    <div class="container-fluid" style="display:block;  flex-flow:wrap; justify-content:flex-start;">
+        <h4 style="margin-left:20px;">Título da música</h4>
+        <audio src="~/Content/music/Dont_Stay.mp3" controls="controls">
+            <p>Seu nevegador não suporta o elemento audio.</p>
+        </audio>
+        <h4 style="margin-left:20px;">Título da música</h4>
+        <audio src="~/Content/music/Dont_Stay.mp3" controls="controls">
+            <p>Seu nevegador não suporta o elemento audio.</p>
+        </audio>
+        <h4 style="margin-left:20px;">Título da música</h4>
+        <audio src="~/Content/music/Dont_Stay.mp3" controls="controls">
+            <p>Seu nevegador não suporta o elemento audio.</p>
+        </audio>
 
 
 
+    </div>
+</div>
+
+    
+<div class="container-fluid" style="display:flex;  flex-flow:wrap; justify-content:center;">
+    <button class="btn btn-default" style="color:#808080;
+background-color:rgba(255, 255, 255, 0.00); border-radius:30px; font-weight:bold;" type="button" onclick="location.href='@Url.Action("Browse", "Loja", new { id = })'">
+        Voltar
+    </button>
+</div>
+
+
+@*<button class="btn" style="color:#fff;
+    border-radius:100px; width:auto;" type="button" onclick="location.href='@Url.Action("AdicionarAlbum", "Loja", new {id = Model.AlbumId })'">
+        <span class="glyphicon glyphicon-shopping-cart" style="color:green;"></span>
+    </button>*@
 
 
 

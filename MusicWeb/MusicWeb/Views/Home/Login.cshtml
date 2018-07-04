@@ -3,8 +3,12 @@
 @{
     ViewBag.Title = "Login";
 }
-<link href="~/Content/Estilo/forms.css" rel="stylesheet" />
-<h2>Login</h2>
+
+
+
+
+
+<h2 style="color:#ffffff; margin-top:80px; text-align:center;">Login</h2>
 
 <div class="container" style="width:100%; align-items: center;
   display: flex;
@@ -16,7 +20,7 @@
     {
 
         <fieldset>
-            <legend>Insira seus dados</legend>
+
 
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
@@ -33,7 +37,7 @@
                 <fieldset>
 
 
-                    <div class="editor-label">
+                    <div class="editor-label" style="color:#00ff90;">
                         @Html.LabelFor(m => m.Email)
                     </div>
 
@@ -43,7 +47,7 @@
                     </div>
 
 
-                    <div class="editor-label">
+                    <div class="editor-label" style="color:#00ff90;">
                         @Html.LabelFor(m => m.Senha)
                     </div>
                     <div class="editor-field">
@@ -53,9 +57,9 @@
 
                     <br />
 
-                    <p>
-                        <input type="submit" value="Logar" />
-                    </p>
+                    <button style="width:180px; font-size:16px;" type="submit" value="Logar" class="btn btn-success">Logar</button>
+
+
                 </fieldset>
             </div>
 
@@ -63,7 +67,7 @@
         </fieldset>
 
 
-
+        <br />
         <div>
             @Html.ActionLink("Registrar-se", "Create", "Usuarios")
         </div>
@@ -74,4 +78,5 @@
 
 </div>
 
-
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>

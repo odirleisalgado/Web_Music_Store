@@ -3,15 +3,43 @@
     ViewBag.Title = "Browse";
 }
 
-<h2>Navegando Genero @Model.Nome</h2>
+<h3 class="well" style="background-color:#428bca; margin-top:80px; color:rgb(255, 255, 255);">Navegando Gênero @Model.Nome</h3>
 
 
-<ul>
+<div class="container-fluid" style="display:flex;  flex-flow:wrap; justify-content:center;">
+
     @foreach (var album in Model.Albums)
     {
-    <li>
-        @Html.ActionLink(album.Titulo, "Details", new { id = album.AlbumId })
-    </li>
+        
+                
+                    <div class="thumbnail" style="width:280px;">
+                        <img src="@album.AlbumArtUrl" style="width:auto;">
+                        <div class="caption">
+                            <h4 style="text-align:center; color:rgba(44, 36, 157, 0.91);">@album.Titulo</h4>
+                            <h4> @album.Genero.Nome</h4>
+                            <h4> @album.Artista.Nome</h4>
+                            <p>R$ @album.Valor</p>
+                            <p style="text-align:center;">
+                                <a href="@Url.Action("AdicionarAlbum", "Loja", new {id = album.AlbumId })" class="btn btn-success" role="button" style="background-color:#2ed116; width:120px;">Adicionar +</a>
+                                
+                                <a href="@Url.Action("Details", "Loja", new {id = album.AlbumId })" class="btn btn-primary" role="button" style="width:120px;">Detalhes</a>
+                            </p>
+                        </div>
+                    </div>
+               
+            
+        
     }
-</ul>
+
+</div>
+
+<div class="container-fluid" style="display:flex;  flex-flow:wrap; justify-content:center;">
+    <button class="btn btn-default" style="color:#808080;
+background-color:rgba(255, 255, 255, 0.00); border-radius:30px; font-weight:bold;" type="button" onclick="location.href='@Url.Action("Index", "Loja")'">
+        Voltar
+    </button>
+</div>
+
+
+
 
