@@ -8,7 +8,7 @@
 
     foreach (var item in Model)
     {
-        total += decimal.Parse( item.Valor.ToString());
+        total += decimal.Parse(item.Valor.ToString());
     }
 
     ViewBag.Total = total;
@@ -48,11 +48,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Artista)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Genero)
-        </th>
+
         <th>
             Valor
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genero.Nome)
         </th>
         <th>
             Opções
@@ -61,7 +62,7 @@
 
     @foreach (var item in Model)
     {
-       
+
         <tr>
             <td>
                 <img class="img-thumbnail" width="80" src=" @Html.DisplayFor(modelItem => item.AlbumArtUrl)" />
@@ -73,12 +74,13 @@
             <td id="td">
                 @Html.DisplayFor(modelItem => item.Artista.Nome)
             </td>
-            <td id="td">
-                @Html.DisplayFor(modelItem => item.Genero.Nome)
-            </td>
 
             <td id="td">
                 R$ @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+
+            <td id="td">
+                @Html.DisplayFor(modelItem => item.Genero.Nome)
             </td>
 
             <td id="td">
@@ -93,13 +95,16 @@
 </table>
 
 
-<button class="btn btn-success" style="color:#2ed116; 
-background-color:rgba(255, 255, 255, 0.00); border-radius:30px; font-weight:bold;" 
-type="button" onclick="location.href='@Url.Action("Index", "Loja")'">Continuar Comprando</button>
+<button class="btn btn-success" style="color:#2ed116;
+background-color:rgba(255, 255, 255, 0.00); border-radius:30px; font-weight:bold;"
+        type="button" onclick="location.href='@Url.Action("Index", "Loja")'">
+    Continuar Comprando
+</button>
 
- <span style=" font-size:16px; font-weight:bold; float:right; margin-right:10px;">Total R$ @total</span>
+<span style=" font-size:16px; font-weight:bold; float:right; margin-right:10px;">Total R$ @total</span>
+<div style="width:218px; float:right;">@Html.ActionLink("Finalizar Pedido", "Finalizar", "Loja", new { valor = Model }, new { @class = "btn btn-primary" }) </div>
 
-    
+
 
 
 

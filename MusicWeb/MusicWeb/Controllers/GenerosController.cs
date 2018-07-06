@@ -47,7 +47,7 @@ namespace MusicWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "GeneroId,Nome,Descricao")] Genero genero)
+        public ActionResult Create([Bind(Include = "GeneroId,Nome,UrlImagem")] Genero genero)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace MusicWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "GeneroId,Nome,Descricao")] Genero genero)
+        public ActionResult Edit([Bind(Include = "GeneroId,Nome,UrlImagem")] Genero genero)
         {
             if (ModelState.IsValid)
             {

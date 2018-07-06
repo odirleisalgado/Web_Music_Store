@@ -19,6 +19,8 @@ namespace MusicWeb.Banco
         public DbSet<Artista> Artistas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<Item> itens { get; set; }
+
     }
 
 }

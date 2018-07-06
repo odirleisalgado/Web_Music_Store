@@ -4,96 +4,36 @@
     ViewBag.Title = "Index";
 }
 
-<h3 class="breadcrumb" style="background-color:#5cb85c; color:rgba(0, 0, 0, 0.80);">Gêneros Musicais</h3>
+<h2>Index</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlImagem)
+        </th>
+        <th></th>
+    </tr>
 
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrlImagem)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.GeneroId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GeneroId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GeneroId })
+        </td>
+    </tr>
+}
 
-
-
-<div class="container" style="display:inline-flex;">
-
-    @foreach (var g in Model)
-    {
-
-        switch (g.Nome)
-        {
-            case "Rock":
-
-                <div class="container">
-                    <img src="~/Content/img/rock1.jpg" width="160"  height="110"style="border-radius:4px;" />
-                    <br />
-                    <br />
-
-                    <a href='@Url.Action("Index", "Generos/Create")' class="btn"
-                       style=" font-size:16px;border-radius:4px;
-                        background-color:rgba(0, 0, 0, 0.70); color:#5cb85c; width:160px; margin-bottom:10px;">@g.Nome</a>
-                        <br />
-
-                    </div>
-
-                    break;
-
-                case "Samba":
-
-                    <div class="container">
-                        <img src="~/Content/img/samba.jpg" width="160"  height="110"style="border-radius:4px;" />
-                        <br />
-                        <br />
-
-                        <a href='@Url.Action("Index", "Generos/Create")' class="btn"
-                           style=" font-size:16px;border-radius:4px;
-                        background-color:rgba(0, 0, 0, 0.70); color:#5cb85c; width:160px; margin-bottom:10px;">@g.Nome</a>
-                        <br />
-
-                    </div>
-
-                    break;
-
-                case "Reggae":
-
-                    <div class="container" >
-                        <img src="~/Content/img/reggae.jpg" width="160" height="110" style="border-radius:4px;" />
-                        <br />
-                        <br />
-
-                        <a href='@Url.Action("Index", "Generos/Create")' class="btn"
-                           style=" font-size:16px;border-radius:4px;
-                        background-color:rgba(0, 0, 0, 0.70); color:#5cb85c; width:160px; margin-bottom:10px;">@g.Nome</a>
-                        <br />
-
-                    </div>
-
-                    break;
-
-                case "Sertanejo":
-
-                    <div class="container">
-                        <img src="~/Content/img/sertanejo.jpg" width="160"  height="110" style="border-radius:4px;" />
-                        <br />
-                        <br />
-
-                        <a href='@Url.Action("Index", "Generos/Create")' class="btn"
-                           style=" font-size:16px;border-radius:4px;
-                        background-color:rgba(0, 0, 0, 0.70); color:#5cb85c; width:160px; margin-bottom:10px;">@g.Nome</a>
-                        <br />
-
-                    </div>
-
-                    break;
-            }
-        }
-
-
-</div>
-
-
-
-
-<div style="margin-bottom:20px; border-radius:100px; visibility:hidden;">
-
-    <a href='@Url.Action("Index", "Generos/Create")' class="btn"
-       style=" font-size:16px; border-radius:100px; background-color:rgba(0, 0, 0, 0.70); color:#5cb85c;">+</a>
-
-
-</div>
-
+</table>

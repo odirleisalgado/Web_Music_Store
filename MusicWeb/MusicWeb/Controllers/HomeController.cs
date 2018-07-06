@@ -13,21 +13,13 @@ namespace MusicWeb.Controllers
         Contexto db = new Contexto();
 
         // GET: Home
-        public ActionResult Index()
-        {
-            if (Session["IdUsuario"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
-           
-        }
+
+      
+
 
         public ActionResult Login()
         {
+
             Session["Email"] = null;
             return View();
         }
@@ -43,10 +35,21 @@ namespace MusicWeb.Controllers
                     var objeto = db.Usuarios.Where(a => a.Email.Equals(usuario.Email) && a.Senha.Equals(usuario.Senha)).FirstOrDefault();
                     if (objeto != null)
                     {
-
-                        Session["IdUsuario"] = objeto.UsuarioId.ToString();
-                        Session["Email"] = objeto.Email.ToString();
-                        return RedirectToAction("Index");
+                        if (usuario.Email.Equals("odirlei@gmail.com"))
+                        {
+                            
+                            Session["Email"] = objeto.Email.ToString();
+                          
+                            return RedirectToAction("Index", "Albums", new { id = 1 });
+                        }
+                        else
+                        {
+                            Session["IdUsuario"] = objeto.UsuarioId;
+                            Session["Email"] = objeto.Email.ToString();
+                            ViewBag.IdUsuario = usuario.UsuarioId;
+                            return RedirectToAction("Home", "Loja", new { id = 1 });
+                        }
+                      
 
                     }
                 }
@@ -55,18 +58,5 @@ namespace MusicWeb.Controllers
             return View(usuario);
         }
 
-
-
-        //public ActionResult UserDashBoard()
-        //{
-        //    if (Session["IdUsuario"] != null)
-        //    {
-        //        return View();
-        //    }
-        //    else
-        //    {
-        //        return RedirectToAction("Login");
-        //    }
-        //}
     }
 }

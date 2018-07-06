@@ -14,11 +14,11 @@ namespace MusicWeb.Models
         [ScaffoldColumn(false)]
         public int AlbumId { get; set; }
 
-        [DisplayName("Gênero")]
-        public int GeneroId { get; set; }
-
         [DisplayName("Artista")]
         public int ArtistaId { get; set; }
+
+        [DisplayName("Gênero")]
+        public int GeneroId { get; set; }
 
         [Required(ErrorMessage = "Por favor, insira um título")]
         [StringLength(160)]
@@ -31,9 +31,13 @@ namespace MusicWeb.Models
         [DisplayName("URL da Imagem")]
         [StringLength(1024)]
         public string AlbumArtUrl { get; set; }
+
         public virtual Genero Genero { get; set; }
+
         public virtual Artista Artista { get; set; }
 
        
+
+
     }
 }

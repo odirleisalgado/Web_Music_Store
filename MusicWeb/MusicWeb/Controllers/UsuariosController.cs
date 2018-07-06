@@ -53,7 +53,7 @@ namespace MusicWeb.Controllers
             {
                 db.Usuarios.Add(usuario);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Login", "Home", new {id=1});
             }
 
             return View(usuario);

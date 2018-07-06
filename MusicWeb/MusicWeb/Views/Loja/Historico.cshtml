@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MusicWeb.Models.Album>
+
+@{
+    ViewBag.Title = "Historico";
+}
+
+<h3 class="breadcrumb" style="background-color:#428bca; margin-top:80px; color:rgb(255, 255, 255);">Histórico de Compras</h3>
+
+
+<table style="margin-left:30px;" class="table">
+    <tr>
+
+        <th style="background-color:#808080; margin-top:80px; color:rgb(255, 255, 255);">
+            Capa
+        </th>
+        <th style="background-color:#808080; margin-top:80px; color:rgb(255, 255, 255);">
+            @Html.DisplayNameFor(model => model.Artista.Nome)
+        </th>
+        <th style="background-color:#808080; margin-top:80px; color:rgb(255, 255, 255);">
+            @Html.DisplayNameFor(model => model.Genero.Nome)
+        </th>
+        <th style="background-color:#808080; margin-top:80px; color:rgb(255, 255, 255);">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th style="background-color:#808080; margin-top:80px; color:rgb(255, 255, 255);">
+            @Html.DisplayNameFor(model => model.Valor)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            <img width="100" src=" @Html.DisplayFor(modelItem => item.AlbumArtUrl)" />
+
+        </td>
+        <td style="padding-top:43px; font-size:16px; font-weight:bold;">
+            @Html.DisplayFor(modelItem => item.Artista.Nome)
+        </td>
+        <td style="padding-top:43px; font-size:16px; font-weight:bold;">
+            @Html.DisplayFor(modelItem => item.Genero.Nome)
+        </td>
+        <td style="padding-top:43px; font-size:16px; font-weight:bold;">
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td style="padding-top:43px; font-size:16px; font-weight:bold;">
+            @Html.DisplayFor(modelItem => item.Valor)
+        </td>
+
+
+    </tr>
+}
+
+</table>

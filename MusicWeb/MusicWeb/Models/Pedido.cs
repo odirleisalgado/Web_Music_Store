@@ -12,19 +12,17 @@ namespace MusicWeb.Models
 
         public System.DateTime DataPedido { get; set; }
 
-        public int UsuarioId { get; set; }
+        public int UsuarioId { get; set; }     
 
-        public virtual Usuario User { get; set; }
+        public Decimal Total { get; set; }
 
-        public double Total { get; set; }
-
-        public int AlbumId { get; set; }
-
-        public virtual List<Album> ListaAlbum { get; set; }
+        public  List<Item> ListaItem { get; set; }
 
         public Pedido()
         {
-            ListaAlbum = new List<Album>();
+            ListaItem = new List<Item>();
         }
+
+       
     }
 }

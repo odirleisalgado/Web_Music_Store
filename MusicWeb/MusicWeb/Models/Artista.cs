@@ -7,7 +7,8 @@ using System.Web;
 namespace MusicWeb.Models
 {
     public class Artista
-    {   
+    {
+        [Display(Name = "Artista")]
         public int ArtistaId { get; set; }
         public string Nome { get; set; }
         

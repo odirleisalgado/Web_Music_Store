@@ -108,6 +108,7 @@
     <Content Include="Content\CapasAlbuns\david_guetta2.JPG" />
     <Content Include="Content\CapasAlbuns\hoje.JPG" />
     <Content Include="Content\CapasAlbuns\matrizes.jpg" />
+    <Content Include="Content\CapasAlbuns\meteora1.jpg" />
     <Content Include="Content\CapasAlbuns\motion.JPG" />
     <Content Include="Content\CapasAlbuns\ritmo_perfeito.jpg" />
     <Content Include="Content\CapasAlbuns\vidas_pra_contar.png" />
@@ -122,7 +123,6 @@
     <Content Include="Content\CapasAlbuns\hibrid_theory.jpg" />
     <Content Include="Content\img\jazz2.jpg" />
     <Content Include="Content\img\jorge_matheus.jpg" />
-    <Content Include="Content\CapasAlbuns\meteora1.jpg" />
     <Content Include="Content\CapasAlbuns\Minutes_to_Midnight.jpg" />
     <Content Include="Content\img\mpb.jpg" />
     <Content Include="Content\img\reggae.jpg" />
@@ -142,16 +142,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Web.config" />
-    <Content Include="Views\Generos\Create.cshtml" />
-    <Content Include="Views\Generos\Delete.cshtml" />
-    <Content Include="Views\Generos\Details.cshtml" />
-    <Content Include="Views\Generos\Edit.cshtml" />
-    <Content Include="Views\Generos\Index.cshtml" />
-    <Content Include="Views\Albums\Create.cshtml" />
-    <Content Include="Views\Albums\Delete.cshtml" />
-    <Content Include="Views\Albums\Details.cshtml" />
-    <Content Include="Views\Albums\Edit.cshtml" />
-    <Content Include="Views\Albums\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -168,6 +158,7 @@
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Artista.cs" />
     <Compile Include="Models\Genero.cs" />
+    <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,14 +186,24 @@
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\UserDashBoard.cshtml" />
     <Content Include="Views\Artistas\Create.cshtml" />
     <Content Include="Views\Artistas\Delete.cshtml" />
     <Content Include="Views\Artistas\Details.cshtml" />
     <Content Include="Views\Artistas\Edit.cshtml" />
     <Content Include="Views\Artistas\Index.cshtml" />
-    <Content Include="Views\Loja\Detalhes.cshtml" />
     <Content Include="Views\Loja\CarrinhoDetails.cshtml" />
+    <Content Include="Views\Loja\Home.cshtml" />
+    <Content Include="Views\Generos\Create.cshtml" />
+    <Content Include="Views\Generos\Delete.cshtml" />
+    <Content Include="Views\Generos\Details.cshtml" />
+    <Content Include="Views\Generos\Edit.cshtml" />
+    <Content Include="Views\Generos\Index.cshtml" />
+    <Content Include="Views\Albums\Create.cshtml" />
+    <Content Include="Views\Albums\Delete.cshtml" />
+    <Content Include="Views\Albums\Details.cshtml" />
+    <Content Include="Views\Albums\Edit.cshtml" />
+    <Content Include="Views\Albums\Index.cshtml" />
+    <Content Include="Views\Loja\Historico.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

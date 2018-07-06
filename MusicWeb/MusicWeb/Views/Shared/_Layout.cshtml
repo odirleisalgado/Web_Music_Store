@@ -26,30 +26,38 @@
                     {
                         if (Session["Email"].Equals("odirlei@gmail.com"))
                         {
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Album", "Index", "Albums")</li>
-                            <li>@Html.ActionLink("Artista", "Index", "Artistas")</li>
+
+                            <li>@Html.ActionLink("Albuns", "Index", "Albums")</li>
+                            <li>@Html.ActionLink("Artistas", "Index", "Artistas")</li>
                             <li>@Html.ActionLink("Generos", "Index", "Generos")</li>
                             <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
+                            <li style="color:#0253e5; margin-top:15px; margin-left:450px;"> Usuário : @Session["Email"].ToString()</li>
+                            <li>@Html.ActionLink("Logout", "Login", "Home")</li>
 
                         }
                         else
                         {
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Loja", "Index", "Loja")</li>
-                            <li>@Html.ActionLink("Carrinho", "CarrinhoDetails", "Loja")</li>
-
-
+                            <li> @Html.ActionLink("Home", "Home", "Loja") </li>
+                            <li> @Html.ActionLink("Loja", "Index", "Loja") </li>
+                            <li> @Html.ActionLink("Carrinho", "CarrinhoDetails", "Loja") </li>
+                            <li> @Html.ActionLink("Histórico", "Historico", "Loja") </li>
                         }
+
                     }
                 </ul>
+
                 <ul class="nav navbar-nav" style=" color:rgba(0, 255, 144, 0.30); float:right; color:rgba(0, 255, 144, 0.80);">
                     @if (Session["Email"] != null)
                     {
-                        <li style="float:left; margin-right:10px; margin-top:15px;"> Usuário : @Session["Email"].ToString()</li>
+                        if (!Session["Email"].Equals("odirlei@gmail.com"))
+                        {
+                            <li style="float:left; margin-right:10px; margin-top:15px;"> Usuário : @Session["Email"].ToString()</li>
 
-                        <li>@Html.ActionLink("Sair", "Login", "Home")</li>
+                            <li>@Html.ActionLink("Logout", "Logout", "Loja", new { id = 1 })</li>
+                        }
+
                     }
+
                 </ul>
             </div>
         </div>

@@ -17,12 +17,12 @@
     <div class="container" style="width:auto; margin:5px; height:auto; padding:10px;">
 
         <h1 style="text-align:left; color:#000;">@Model.Titulo</h1>
-        <h4 style="text-align:left; color:#000;">@Model.Genero.Nome</h4>
+        <h1 style="text-align:left; color:#000;">@Model.Genero.Nome</h1>
         <h4 style="text-align:left; color:#000;">@Model.Artista.Nome</h4>
         <h4 style="text-align:left; color:#000;">R$ @Model.Valor</h4>
 
         <button class="btn" style="color:white; background-color:#2ed116;
-border-radius:100px; width:auto;" type="button" onclick="location.href='@Url.Action("AdicionarAlbum", "Loja", new {id = Model.AlbumId })'">
+        border-radius:100px; width:auto;" type="button" onclick="location.href='@Url.Action("AdicionarAlbum", "Loja", new {id = Model.AlbumId })'">
             Adicionar <span class="glyphicon glyphicon-shopping-cart" style="color:white;"></span>
         </button>
 
@@ -55,7 +55,8 @@ border-radius:100px; width:auto;" type="button" onclick="location.href='@Url.Act
     
 <div class="container-fluid" style="display:flex;  flex-flow:wrap; justify-content:center;">
     <button class="btn btn-default" style="color:#808080;
-background-color:rgba(255, 255, 255, 0.00); border-radius:30px; font-weight:bold;" type="button" onclick="location.href='@Url.Action("Browse", "Loja", new { id = })'">
+background-color:rgba(255, 255, 255, 0.00); border-radius:30px; font-weight:bold;" type="button" 
+            onclick="location.href='@Url.Action("Index", "Loja", new { id = 1 })'">
         Voltar
     </button>
 </div>

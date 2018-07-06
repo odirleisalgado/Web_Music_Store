@@ -12,7 +12,7 @@
     {
         
                 
-                    <div class="thumbnail" style="width:280px;">
+                    <div class="thumbnail" style="width:280px; margin-right:20px;">
                         <img src="@album.AlbumArtUrl" style="width:auto;">
                         <div class="caption">
                             <h4 style="text-align:center; color:rgba(44, 36, 157, 0.91);">@album.Titulo</h4>
@@ -25,10 +25,7 @@
                                 <a href="@Url.Action("Details", "Loja", new {id = album.AlbumId })" class="btn btn-primary" role="button" style="width:120px;">Detalhes</a>
                             </p>
                         </div>
-                    </div>
-               
-            
-        
+                    </div>       
     }
 
 </div>
