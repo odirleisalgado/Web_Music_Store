@@ -108,9 +108,11 @@
     <Content Include="Content\CapasAlbuns\david_guetta2.JPG" />
     <Content Include="Content\CapasAlbuns\hoje.JPG" />
     <Content Include="Content\CapasAlbuns\matrizes.jpg" />
-    <Content Include="Content\CapasAlbuns\meteora1.jpg" />
+    <Content Include="Content\CapasAlbuns\meteora.jpg" />
     <Content Include="Content\CapasAlbuns\motion.JPG" />
+    <Content Include="Content\CapasAlbuns\nati.JPG" />
     <Content Include="Content\CapasAlbuns\ritmo_perfeito.jpg" />
+    <Content Include="Content\CapasAlbuns\teste.JPG" />
     <Content Include="Content\CapasAlbuns\vidas_pra_contar.png" />
     <Content Include="Content\Estilo\forms.css" />
     <Content Include="Content\Estilo\SiteEx.css" />
@@ -125,6 +127,7 @@
     <Content Include="Content\img\jorge_matheus.jpg" />
     <Content Include="Content\CapasAlbuns\Minutes_to_Midnight.jpg" />
     <Content Include="Content\img\mpb.jpg" />
+    <Content Include="Content\img\poster.jpg" />
     <Content Include="Content\img\reggae.jpg" />
     <Content Include="Content\img\rock.JPG" />
     <Content Include="Content\img\rock1.JPG" />
